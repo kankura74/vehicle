@@ -1,0 +1,387 @@
+@charset "UTF-8";
+
+/* 共通部分*/
+/*必要なら書き足すこと*/
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+}
+
+/* * {
+	color: var(--basecolor);
+} */
+
+a {
+	text-decoration: none;
+}
+
+img {
+	width: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+::before,
+::after {
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 0;
+	margin: 0;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	background: transparent;
+	text-decoration: none;
+	color: inherit;
+}
+
+/*共通部分ここまで*/
+
+/* ウェブフォント */
+.sawarabi-mincho-regular {
+	font-family: "Sawarabi Mincho", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.hina-mincho-regular {
+	font-family: "Hina Mincho", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* ウェブフォントここまで */
+
+.wrapper {
+	width: 95%;
+	max-width:1000px;
+	position: relative;
+}
+
+/* 所設定 */
+
+:root {
+	--basecolor: #acd4e3;
+	--maincolor: #1b2e65;
+	--brack: rgb(0, 0, 0);
+	--white: rgb(255, 255, 255);
+}
+
+/* 所設定ここまで */
+
+/* ボディ */
+body {
+	background-image: url(img/main/images.jpg);
+	background-position: center;
+	background-repeat: repeat-y;
+	background-size: cover;
+	background-color: rgb(from var(--basecolor) r g b / 0.9);
+	background-color: var(--basecolor);
+	letter-spacing: 0.1em;
+}
+
+/* ヘッダー */
+header {
+	width: 100%;
+	height: 6vw;
+	background-color: rgb(from var(--maincolor) r g b / 0.8);
+	z-index: 200;
+
+}
+
+header.header01 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+div.logo {
+	width: 5vw;
+	height: 4.5vw;
+}
+
+div.logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+nav.nav ul.item {
+	display: flex;
+}
+li.list {
+	padding-left: 1.5rem;
+	color: var(--basecolor);
+	font-size: 1.5vw;
+}
+
+header a:hover {
+	color: var(--white);
+	font-weight: bold;
+	font-size: 1.6vw;
+	transition: 0.5s;
+}
+
+#menu-btn,
+.nav-hidden {
+	display: none;
+}
+
+
+/* ヘッダー終了 */
+
+h1 {
+	color: var(--maincolor);
+	font-size: 3.5rem;
+}
+
+.name h2 {
+	color: var(--maincolor);
+}
+
+.item1 h3 {
+	color: var(--white);
+	font-size: 1.2rem;
+}
+
+.item1 p {
+	color: var(--basecolor);
+	font-size: 0.9rem;
+}
+
+.syosai h3 {
+	color: var(--maincolor);
+}
+
+.syosai p {
+	color: var(--maincolor);
+}
+
+
+
+.all {
+	backdrop-filter: blur(5px);
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.flex1 {
+	width: 100%;
+	display: flex;
+} 
+
+.item1 {
+	height: 100%;
+	flex: 1;
+
+	display: flex;
+	justify-content: space-between;
+	flex-flow: column;
+}
+
+.item1 {
+	background-color: rgb(from var(--maincolor) r g b / 0.5);
+}
+
+.name {
+	width: 100%;
+}
+
+.gaiyo {
+	width: 100%;
+}
+
+.damepo {
+	width: 100%;
+}
+
+.item2 {
+	flex: 3;
+}
+
+.item2 img {
+	height: 100%;
+}
+
+.flex2 {
+	width: 100%;
+	background-color: #ffffff3c;
+}
+
+
+/* フッター */
+footer {
+	background-color: var(--maincolor);
+	color: var(--basecolor);
+	width: 100%;
+	text-align: right;
+	font-size: 0.8rem;
+	padding: 0.5vw 0.5vw;
+}
+
+/* スマホ向け */
+@media (max-width: 768px) {
+	/* 所設定 */
+	.wrapper {
+		width: 90%;
+		margin: 5vw auto;
+
+
+	}
+	/* 所設定終了 */
+	/* ヘッダーサイズの変更 */
+	header {
+		height: 6.5vw;
+	}
+
+	#menu-btn {
+		display: block;
+		width: 4.5vw;
+		height: 4.5vw;
+		position: fixed;
+		top: 2vw;
+		right: 1.6vw;
+		z-index: 201;
+	}
+
+	#menu-btn span,
+	#menu-btn span::before,
+	#menu-btn span::after {
+		content: "";
+		height: 0.2vw;
+		width: 100%;
+		border-radius: 3px;
+		background: var(--basecolor);
+		position: absolute;
+		transition: 0.2s;
+	}
+
+	#menu-btn span {
+		top: 0;
+	}
+
+	#menu-btn span::before {
+		top: 1.5vw;
+	}
+
+	#menu-btn span::after {
+		top:3vw;
+	}
+	#nav-input:checked~#menu-btn span {
+		top: 8px;
+		transform: rotate(45deg);
+	}
+
+	#nav-input:checked~#menu-btn span::before {
+		opacity: 0;
+	}
+
+	#nav-input:checked~#menu-btn span::after {
+		top: 0;
+		transform: rotate(-90deg);
+	}
+
+	.rogo {
+		width: 5.5vw;
+		height: 30px;
+	}
+
+	nav.nav {
+		width: 300px;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		right: -100%;
+		z-index: 2;
+		background: var(--maincolor);
+		transition: 0.5s;
+	}
+
+	nav.nav ul.item {
+		display: block;
+		padding: 4rem 2rem;
+	}
+
+	nav.nav ul.item li.list {
+		padding-left: 0;
+		padding-bottom: 1.5rem;
+		font-size: 3vw;
+	}
+
+
+	.all {
+		padding: 30px;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	.flex1 {
+		flex-direction: column-reverse;
+	}
+
+	.item1,
+	.item2,
+	.syosai {
+		margin: 15px 0;
+		padding: 10px;
+	}
+
+	.item1 p,
+	.item2 p,
+	.syosai p {
+		margin: 0 0 30px 0;
+	}
+
+
+	header.header01 #nav-input:checked~nav.nav {
+		right: 0;
+	}
+
+}
+
+
+/* パソコン向け */
+@media (min-width: 768px) {
+
+	.all {
+		padding: 30px;
+	}
+
+	.wrapper {
+		margin: 30px auto;
+	}
+
+	.name {
+		padding: 10px;
+	}
+
+	section {
+		margin: 60px 0;
+	}
+
+	.flex1 {
+		gap: 60px;
+	}
+
+	.gaiyo,
+	.damepo,
+	.syosai {
+		padding: 15px;
+	}
+
+}
+
+.item1 h3,
+.syosai h3 {
+	margin: 0 0 5px 0;
+}
+/* パソコン終了 */
