@@ -1,0 +1,674 @@
+@charset "UTF-8";
+
+/* 共通部分*/
+/*必要なら書き足すこと*/
+html {
+	font-size: clamp( 0.5rem, calc( 0.75rem + 1vw ), 1.5rem );
+}
+
+body {
+	font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+::before,
+::after {
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 0;
+	margin: 0;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	background: transparent;
+	text-decoration: none;
+	color: inherit;
+}
+
+
+
+/*共通部分ここまで*/
+
+/* ウェブフォント */
+.sawarabi-mincho-regular {
+	font-family: "Sawarabi Mincho", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.hina-mincho-regular {
+	font-family: "Hina Mincho", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* ウェブフォントここまで */
+
+.wrapper {
+	margin: 0 auto;
+	width: 80%;
+	max-width: 1200px;
+}
+
+/* 所設定 */
+
+:root {
+	--basecolor: #acd4e3;
+	--maincolor: #1b2e65;
+	--brack: rgb(0, 0, 0);
+	--white: rgb(255, 255, 255);
+}
+
+/* 所設定ここまで */
+
+/* ボディ */
+body {
+	background-image: url(img/main/images.jpg);
+	background-position: center;
+	background-repeat: repeat-y;
+	background-size: cover;
+	background-color: rgb(from var(--basecolor) r g b / 0.9);
+	background-color: var(--basecolor);
+	letter-spacing: 0.1em;
+	/* overflow: hidden; */
+	/* ↑入れると画面が動かない */
+}
+
+/* ヘッダー */
+header {
+	width: 100%;
+	height: 6vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgb(from var(--maincolor) r g b / 0.8);
+	z-index: 200;
+}
+
+header.header01 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1.2rem;
+}
+
+header a:hover {
+	color: var(--white);
+	font-weight: bold;
+	font-size: 1.3rem;
+	transition: 0.5s;
+}
+
+div.logo {
+	width: 5vw;
+	height: 4.5vw;
+}
+
+div.logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+nav.nav ul.item {
+	display: flex;
+}
+li.list {
+	padding-left: 0.8rem;
+	color: var(--basecolor);
+	font-size: 0.8rem;
+}
+
+#menu-btn,
+.nav-hidden {
+	display: none;
+}
+
+
+/* ヘッダー終了 */
+
+/* ヒーローイメージ */
+.hero-img {
+	background-image: url(img/main/heroimg.jpg);
+	background-size: cover;
+	background-position: center;
+
+}
+
+
+.maintitle h1 {
+	letter-spacing: 0rem;
+	line-height: 6vw;
+}
+/* ヒーローイメージ終了 */
+
+/* スマホ、パソコン共通フレックス */
+.flex {
+	padding: 5%;
+	backdrop-filter: blur(5px);
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sozai1,
+.sozai2,
+.sozai3,
+.sozai4,
+.sozai5,
+.sozai6 {
+	width: 100%;
+	aspect-ratio: 2/1;
+	background-color: rgb(from var(--maincolor) r g b / 0.5);
+	/* さらに子要素に対してフレックスの設定 */
+	flex-direction: column;
+	display: flex;
+	border: var();
+	color: var(--basecolor);
+	transition: .4s;
+	position: relative;
+	padding: 0 3% 3% 3%;
+}
+
+
+
+.sozai1::before,
+.sozai2::before,
+.sozai3::before,
+.sozai4::before,
+.sozai5::before,
+.sozai6::before {
+	content: "";
+	width: 50px;
+	height: 50px;
+	border-top: 2px solid rgba(255, 255, 255, 0.5);
+	border-left: 2px solid rgba(255, 255, 255, 0.5);
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	transition: .4s;
+	transition-delay: .5s;
+}
+
+.sozai1::after,
+.sozai2::after,
+.sozai3::after,
+.sozai4::after,
+.sozai5::after,
+.sozai6::after {
+	content: "";
+	width: 50px;
+	height: 50px;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+	border-right: 2px solid rgba(255, 255, 255, 0.5);
+	position: absolute;
+	bottom: -1px;
+	right: -1px;
+	transition: .4s;
+	transition-delay: .5s;
+}
+.sozai1:hover::before,
+.sozai1:hover::after,
+.sozai2:hover::before,
+.sozai2:hover::after,
+.sozai3:hover::before,
+.sozai3:hover::after,
+.sozai4:hover::before,
+.sozai4:hover::after,
+.sozai5:hover::before,
+.sozai5:hover::after,
+.sozai6:hover::before,
+.sozai6:hover::after {
+	width: 100%;
+	height: 100%;
+	border-color: rgba(255, 255, 255, 0.3);
+	transition-delay: .0s;
+}
+
+.sozai1:hover,
+.sozai2:hover,
+.sozai3:hover,
+.sozai4:hover,
+.sozai5:hover,
+.sozai6:hover {
+	background: rgba(25, 42, 73, 0.696);
+	backdrop-filter: blur(15px);
+	transition-delay: .3s;
+}
+
+.matome {
+	color: var(--basecolor);
+	background-color: #1b2f67a1;
+	opacity: 0.5;
+	font-size: 0.7rem;
+	padding: 50px;
+}
+
+/* フレックスの中のフレックス2 */
+.title {
+	flex: auto;
+	width: 100%;
+	flex-grow: 0;
+}
+
+.title h3 {
+	padding: 5%;
+	font-size: 1.2rem;
+	font-family: "Hina Mincho", serif;
+	font-weight: 400;
+	font-style: normal;
+	letter-spacing: 0.6rem;
+}
+
+.naiyou {
+	flex: auto;
+	flex-grow: 0;
+	/* さらにフレックスを分割 */
+	display: flex;
+}
+
+/* フレックスの中にあるフレックスの中のフレックス3 */
+
+.syasin {
+	flex: auto;
+	width: 100%;
+	aspect-ratio: 4/3;;
+	flex-grow: 0;
+	z-index: 100;
+	position: relative;
+}
+
+.syasin::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: -20px;
+	left: -20px;
+	z-index: 0;
+}
+
+.syasin1::before {
+	background-color: rgba(135, 0, 0, 0.3);
+}
+
+.syasin2::before {
+	background-color: rgba(135, 60, 0, 0.3);
+}
+
+.syasin3::before {
+	background-color: rgba(135, 115, 0, 0.3);
+}
+
+.syasin4::before {
+	background-color: rgba(0, 135, 0, 0.3);
+}
+
+.syasin5::before {
+	background-color: rgba(0, 0, 135, 0.3);
+}
+
+.syasin6::before {
+	background-color: rgba(35, 0, 135, 0.302);
+}
+
+.syasin img {
+	object-fit: cover;
+	z-index: 100;
+	position: relative;
+}
+
+.arasuzi {
+	flex: auto;
+	flex-grow: 2;
+	text-align: center;
+}
+
+/* ボタンの設定 */
+.textlink a {
+	position: relative;
+	color: var(--basecolor);
+	text-decoration: none;
+	background-color: rgb(from var(--maincolor) r g b / 0.5);
+	padding: 4% 3%;
+	font-size: 0.9rem;
+	z-index: 999;
+}
+.textlink a:hover {
+	color: var(--white);
+	background-color: rgb(from var(--basecolor) r g b / 0.2);
+	font-weight: bold;
+	font-size: 0.9rem;
+	transition: 1s;
+}
+
+.textlink02 a:hover::after {
+	width: 100%;
+}
+/* ボタンの設定終了 */
+
+/* arasuziのデザイン設定 */
+
+.text1 {
+	height: 65%;
+	font-size: 0.7rem;
+	padding: 6%;
+}
+
+.saigo img {
+	width: 10%;
+	margin: auto;
+	display: block;
+}
+
+/* フッター */
+footer {
+	background-color: var(--maincolor);
+	color: var(--basecolor);
+	width: 100%;
+	text-align: right;
+	font-size: 0.6rem;
+	padding: 0.5vw 0.5vw;
+}
+
+/* スマホ向け */
+@media (max-width: 768px) {
+	/* 所設定 */
+	.wrapper {
+		width: 90%;
+		margin: 5vw auto;
+
+
+	}
+	/* 所設定終了 */
+	/* ヘッダーサイズの変更 */
+	header {
+		height: 6.5vw;
+	}
+
+	#menu-btn {
+		display: block;
+		width: 4.5vw;
+		height: 4.5vw;
+		position: fixed;
+		top: 2vw;
+		right: 1.6vw;
+		z-index: 201;
+	}
+
+	#menu-btn span,
+	#menu-btn span::before,
+	#menu-btn span::after {
+		content: "";
+		height: 0.2vw;
+		width: 100%;
+		border-radius: 3px;
+		background: var(--basecolor);
+		position: absolute;
+		transition: 0.2s;
+	}
+
+	#menu-btn span {
+		top: 0;
+	}
+
+	#menu-btn span::before {
+		top: 1.5vw;
+	}
+
+	#menu-btn span::after {
+		top:3vw;
+	}
+	#nav-input:checked~#menu-btn span {
+		top: 8px;
+		transform: rotate(45deg);
+	}
+
+	#nav-input:checked~#menu-btn span::before {
+		opacity: 0;
+	}
+
+	#nav-input:checked~#menu-btn span::after {
+		top: 0;
+		transform: rotate(-90deg);
+	}
+
+	.rogo {
+		width: 5.5vw;
+		height: 30px;
+	}
+
+	nav.nav {
+		width: 300px;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		right: -100%;
+		z-index: 2;
+		background: var(--maincolor);
+		transition: 0.5s;
+	}
+
+	nav.nav ul.item {
+		display: block;
+		padding: 4rem 2rem;
+	}
+
+	nav.nav ul.item li.list {
+		padding-left: 0;
+		padding-bottom: 1.5rem;
+		font-size: 1rem;
+	}
+
+	/* ヒーローイメージ */
+	.hero-img {
+		text-align: center;
+		width: 100%;
+		background-color: var(--maincolor);
+		aspect-ratio: 1.618/1;
+		margin: 6.5vw 0 0 0;
+		color: var(--basecolor);
+	}
+
+	.hero-img h1 {
+		color: var(--white);
+		font-size: 2rem;
+		margin:  2vw auto 5vw auto;
+		letter-spacing: 0.2rem;
+
+	}
+	.suki {
+		text-align: left;
+	}
+	.hero-img img {
+		margin: 3vw 0 -1vw 0;
+	}
+
+
+
+	header.header01 #nav-input:checked~nav.nav {
+		right: 0;
+	}
+
+	/* ヒーローイメージ終了 */
+
+	/* ↓スマホだけに表示 */
+	.setumei2 {
+		height: 50vw;
+		opacity: 0.42;
+		background-color: var(--brack);
+		color: var(--basecolor);
+		font-size: 0.8rem;
+		padding: 4.6vw;
+		line-height: 2.5em;
+		letter-spacing: 0.2em;
+	}
+	/* フレックス関連 */
+	/* ↓スマホでは表示しない内容 */
+	.setumei1,
+	.kara,
+	br {
+		display: none;
+	}
+
+	.text1 {
+		font-size: 1rem;
+		height: 70%;
+		padding: 2%;
+	}
+
+	.textlink a {
+		font-size: 1rem;
+	}
+
+	.title h3 {
+		padding: 2.5%;
+		height: 60%;
+		letter-spacing: 0.5rem;
+	}
+
+	.naiyou {
+		padding: 2%;
+	}
+
+	.matome {
+		opacity: 0.42;
+		background-color: var(--brack);
+		color: var(--basecolor);
+		font-size: 0.8rem;
+		padding: 4.6vw;
+		line-height: 2.5em;
+		letter-spacing: 0.2em;
+	}
+
+
+}
+
+
+/* パソコン向け */
+@media (min-width: 768px) {
+	/* ヒーローイメージ */
+	.hero-img {
+		background-color: var(--maincolor);
+		width: 95vw;
+		height: 40vw;
+		margin: 6.4vw 2vw 0 2vw;
+		color: var(--basecolor);
+
+		display: flex;
+	}
+
+	.hero-img .hidari {
+		width: 55vw;
+	}
+
+	.hidari h1 {
+		text-align: right;
+		font-size: 1.5rem;
+		color: var(--white);
+	}
+
+	.eigo {
+		height: 55%;
+		width: 100%;
+	}
+
+	.eigo img {
+		margin: 30% 2vw 0 7vw;
+		height: 20%;
+	}
+
+	.suki {
+		padding: 1.1vw;
+	}
+
+	.maintitle {
+		height: 30%;
+		letter-spacing: 0.2rem;
+	}
+
+	/* ↑ヒーローイメージ左側の要素終了 */
+
+	.hero-img .setumei1 {
+		width: 56vw;
+
+		box-sizing: border-box;
+		margin: 5vw 10vw 2vw 5vw;
+		padding: 3vw;
+		font-size: 0.7rem;
+		line-height: 200%;
+
+		background-color: rgb(from var(--maincolor) r g b / 0.6);
+		color: var(--basecolor);
+		backdrop-filter: blur(2px);
+	}
+
+	/* ↑ヒーローイメージ右側の要素終了 */
+
+	.setumei2 {
+		display: none;
+	}
+
+	/* フレックスの設定 */
+
+	.flex {
+		display: flex;
+		aspect-ratio: 4/3;
+		margin: 20px auto;
+	}
+
+	.item1 {
+		flex: auto;
+
+		display: flex;
+		flex-direction: column;
+
+		height: 77vw;
+		width: 50%;
+
+		margin: 2% 2% 2% 1%;
+	}
+
+	.item2 {
+		flex: auto;
+		display: flex;
+		flex-direction: column;
+		height: 77vw;
+		width: 50%;
+
+		margin: 2% 1% 2% 2%;
+	}
+	/* 左右に分割するフレックスの終了 */
+	.sozai1,
+	.sozai2,
+	.sozai3,
+	.sozai4,
+	.sozai5,
+	.sozai6 {
+		background-color: rgb(from var(--maincolor) r g b / 0.5);
+		width: 100%;
+		aspect-ratio: 2/1;
+		margin: 0 0 8% 0;
+	}
+
+	.title h3 {
+		padding: 1vw;
+		font-size: 1rem;
+	}
+
+	.kara {
+		height: 6em;
+	}
+
+	
+}
+/* パソコン終了 */
