@@ -3,7 +3,7 @@
 /* 共通部分*/
 /*必要なら書き足すこと*/
 html {
-	font-size: clamp( 0.5rem, calc( 0.75rem + 1vw ), 1.5rem );
+	font-size: clamp( 0.5rem, calc( 0.8rem + 1vw ), 2rem );
 }
 
 body {
@@ -35,6 +35,7 @@ a {
 	background: transparent;
 	text-decoration: none;
 	color: inherit;
+	
 }
 
 
@@ -59,7 +60,7 @@ a {
 .wrapper {
 	margin: 0 auto;
 	width: 80%;
-	max-width: 1200px;
+	max-width: 1300px;
 }
 
 /* 所設定 */
@@ -167,7 +168,6 @@ li.list {
 .sozai5,
 .sozai6 {
 	width: 100%;
-	aspect-ratio: 2/1;
 	background-color: rgb(from var(--maincolor) r g b / 0.5);
 	/* さらに子要素に対してフレックスの設定 */
 	flex-direction: column;
@@ -177,6 +177,7 @@ li.list {
 	transition: .4s;
 	position: relative;
 	padding: 0 3% 3% 3%;
+	margin: 5% 0;
 }
 
 
@@ -253,7 +254,7 @@ li.list {
 	padding: 50px;
 }
 
-/* フレックスの中のフレックス2 */
+/*フレックス2 */
 .title {
 	flex: auto;
 	width: 100%;
@@ -270,19 +271,17 @@ li.list {
 }
 
 .naiyou {
-	flex: auto;
-	flex-grow: 0;
+	width: 100%;
+	gap: 5%;
 	/* さらにフレックスを分割 */
 	display: flex;
 }
 
-/* フレックスの中にあるフレックスの中のフレックス3 */
+/* フレックス3 */
 
 .syasin {
-	flex: auto;
 	width: 100%;
-	aspect-ratio: 4/3;;
-	flex-grow: 0;
+	flex: 1;
 	z-index: 100;
 	position: relative;
 }
@@ -292,8 +291,8 @@ li.list {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	bottom: -20px;
-	left: -20px;
+	bottom: -10px;
+	left: -10px;
 	z-index: 0;
 }
 
@@ -328,9 +327,8 @@ li.list {
 }
 
 .arasuzi {
-	flex: auto;
-	flex-grow: 2;
 	text-align: center;
+	flex: 1;
 }
 
 /* ボタンの設定 */
@@ -339,16 +337,18 @@ li.list {
 	color: var(--basecolor);
 	text-decoration: none;
 	background-color: rgb(from var(--maincolor) r g b / 0.5);
-	padding: 4% 3%;
-	font-size: 0.9rem;
+	padding: 5%;
+	margin: 10% 0 0 0;
+	font-size: 0.7rem;
 	z-index: 999;
 }
 .textlink a:hover {
 	color: var(--white);
 	background-color: rgb(from var(--basecolor) r g b / 0.2);
 	font-weight: bold;
-	font-size: 0.9rem;
+	font-size: 0.8rem;
 	transition: 1s;
+	
 }
 
 .textlink02 a:hover::after {
@@ -359,14 +359,14 @@ li.list {
 /* arasuziのデザイン設定 */
 
 .text1 {
-	height: 65%;
-	font-size: 0.7rem;
-	padding: 6%;
+	font-size: 0.65rem;
+	padding: 2%;
 }
 
 .saigo img {
 	width: 10%;
-	margin: auto;
+	margin: 5% auto;
+text-align: center;
 	display: block;
 }
 
@@ -502,8 +502,7 @@ footer {
 	/* ヒーローイメージ終了 */
 
 	/* ↓スマホだけに表示 */
-	.setumei2 {
-		height: 50vw;
+	.setumei2 { 
 		opacity: 0.42;
 		background-color: var(--brack);
 		color: var(--basecolor);
@@ -521,7 +520,7 @@ footer {
 	}
 
 	.text1 {
-		font-size: 1rem;
+		font-size: 1.2rem;
 		height: 70%;
 		padding: 2%;
 	}
@@ -599,13 +598,13 @@ footer {
 	/* ↑ヒーローイメージ左側の要素終了 */
 
 	.hero-img .setumei1 {
-		width: 56vw;
+		width: 50vw;
 
 		box-sizing: border-box;
 		margin: 5vw 10vw 2vw 5vw;
 		padding: 3vw;
-		font-size: 0.7rem;
-		line-height: 200%;
+		font-size: 1.2vw;
+		line-height: 3vw;
 
 		background-color: rgb(from var(--maincolor) r g b / 0.6);
 		color: var(--basecolor);
